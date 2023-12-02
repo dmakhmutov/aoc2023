@@ -25,7 +25,6 @@ result2 = lines.map do |row|
   first_number = numbers_row[0]
   second_number = numbers_row[-1]
 
-  # puts "#{converted_number_row} => #{first_number}#{second_number}"
   "#{first_number}#{second_number}".to_i
 end.sum
 
