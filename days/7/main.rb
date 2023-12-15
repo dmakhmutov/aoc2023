@@ -33,7 +33,7 @@ def change_j_to_rank(hand, rank, acc = [])
 
   return [hand] if target_idx.nil?
 
-  rank.split("").map do |rank_letter|
+  rank.chars.map do |rank_letter|
     next if rank_letter == "J"
     new_hand = hand.dup
     new_hand[target_idx] = rank_letter
@@ -62,7 +62,7 @@ end
 
 result1 = lines1.each_with_object({}) do |line, acc|
   hand, bid = line.split(" ")
-  split_hand = hand.split("")
+  split_hand = hand.chars
   acc[bid] = [hand, calc_combo(split_hand), calc_individual(split_hand, RANK1)]
 end
   .sort_by { |_bid, (_hand, combo_name, power)| [HANDS.index(combo_name), -power.to_i] }
@@ -75,7 +75,7 @@ puts "Part 1: #{result1}"
 
 result2 = lines1.each_with_object({}) do |line, acc|
   hand, bid = line.split(" ")
-  split_hand = hand.split("")
+  split_hand = hand.chars
   acc[bid] = [hand, calc_the_best_combo(split_hand), calc_individual(split_hand, RANK2)]
 end
   .sort_by { |_bid, (_hand, combo_name, power)| [HANDS.index(combo_name), -power.to_i] }

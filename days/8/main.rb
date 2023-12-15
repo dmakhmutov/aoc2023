@@ -30,7 +30,7 @@ paths = lines1.each_with_object({}) do |line, acc|
   acc[route] = conditions.scan(/[A-Z]+/)
 end
 
-result1 = long_way(paths, "AAA", instructions, next_elements_acc = []).count
+result1 = long_way(paths, "AAA", instructions).count
 
 puts "Part 1: #{result1}"
 ########################
