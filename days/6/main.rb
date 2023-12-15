@@ -18,7 +18,6 @@ end.values.reduce(:*)
 
 puts "Part 1: #{result1}"
 
-
 time = lines1[0].scan(/\d+/).join.to_i
 distance = lines1[1].scan(/\d+/).join.to_i
 

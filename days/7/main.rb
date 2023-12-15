@@ -73,7 +73,6 @@ end
 
 puts "Part 1: #{result1}"
 
-
 result2 = lines1.each_with_object({}) do |line, acc|
   hand, bid = line.split(" ")
   split_hand = hand.split("")
